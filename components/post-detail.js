@@ -1,0 +1,84 @@
+import { Row, Col, Spin } from 'antd';
+import { useState, useEffect } from 'react';
+
+const postDetail = props => {
+    const [imgLoaded, setImgLoaded] = useState()
+    useEffect(() => {
+    }, []);
+
+    if (props.postDetail) {
+        const content = props.postDetail.postDetail
+        const comments = props.postDetail.comments
+        console.log(props)
+
+        return (
+            <div className='post-details'>
+                {!props.postDetail ? (
+                    <center><Spin /></center>
+                ) : (<div>
+                    <Row className='card-content' type='flex'>
+                        <Col span={3}>
+                            <img src={content.owner.picture} className='profile-pic' />
+                        </Col>
+                        <Col span={21}>
+                            <Row>
+                                <b><p>{content.owner.firstName}</p></b>
+                            </Row>
+                            <Row>
+                                <p>{content.text}</p>
+                            </Row>
+                            {content.image && (
+                                <div>
+                                    {imgLoaded ? null :
+                                        (
+                                            <Spin />
+                                        )}
+                                    <Row>
+                                        <img
+                                            className='content-img'
+                                            src={content.image}
+                                            onLoad={() => setImgLoaded(true)}
+                                            style={imgLoaded ? {} : { display: 'none' }} />
+                                    </Row>
+                                </div>
+                            )}
+                        </Col>
+                    </Row>
+                    <hr />
+                    <Row className='comment-section'>
+                        <Col>
+                            {comments.data && comments.data.length > 0 ?
+                                comments.data.map(comment => {
+                                    return (<div>
+                                        <Row type='flex' className='comment-card'>
+                                            <Col span={3}>
+                                                <img src={comment.owner.picture} className='profile-pic' />
+                                            </Col>
+                                            <Col span={21}>
+                                                <Row>
+                                                    <b><p>{comment.owner.firstName}</p></b>
+                                                </Row>
+                                                <Row>
+                                                    <p>{comment.message}</p>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                        <hr />
+                                    </div>)
+                                })
+                                : (
+                                    <div>No Comments</div>
+                                )
+                            }
+                        </Col>
+                    </Row>
+                </div>)}
+
+            </div>
+        )
+    } else {
+        return (<center><Spin /></center>)
+    }
+}
+
+export default postDetail

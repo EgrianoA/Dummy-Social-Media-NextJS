@@ -1,0 +1,56 @@
+/*Default Style*/
+.post-card{
+    cursor: pointer;
+    margin: 0 0 0 0;
+    :hover {
+        background-color: #f1efef;
+        transition: 0.2s;
+    }
+    p {
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+    .card-content{
+        padding: 2vh 2vw 2vh 2vw;
+        border-radius: 15px;
+        min-height: 70px;
+        margin-bottom: 0px;
+    }
+    .profile-pic{
+        border-radius: 50%;
+        width: 3vw;
+        max-width: 50px;
+        max-height: auto;
+    }
+    .content-img{
+        border-radius: 10px;
+        margin: 10px 0 10px 0;
+        width: 20vw;
+        height: auto;
+        object-fit: cover;
+        max-width: 400px;
+        max-height: 600px;
+    }
+    hr {
+        border: none;
+        height: 0.1px;
+        background-color: #ebebeb;
+        margin: 0;
+    }
+}
+
+/*768p Screen Breakpoint*/
+@media only screen and (max-width: 1366px) {
+}
+
+/*IPAD PRO PORTRAIT Screen Breakpoint*/
+@media only screen and (max-width: 1024px) {
+}
+
+/*IPAD PORTRAIT Screen Breakpoint*/
+@media only screen and (max-width: 768px) {
+}
+
+/*Mobile Screen Breakpoint*/
+@media only screen and (max-width: 576px) {
+}
