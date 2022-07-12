@@ -11,6 +11,7 @@ const Home = () => {
   const [content, setContent] = useState([])
   const [showPostDetail, setShowPostDetail] = useState(false)
   const [postDetail, setPostDetail] = useState()
+  const [hasMore, setHasMore] = useState(true)
 
   const pageSize = 5
   useEffect(() => {
@@ -46,6 +47,9 @@ const Home = () => {
         setContent(content.concat(res.data.data))
         setPage(newPage)
         setDataLength(dataLength + 5)
+        if (dataLength + 5 >= res.data.total) {
+          setHasMore(false)
+        }
       } else {
         console.log(res.data)
       }
@@ -109,7 +113,7 @@ const Home = () => {
             <InfiniteScroll
               dataLength={dataLength}
               next={nextPage}
-              hasMore={true}
+              hasMore={hasMore}
               loader={<center><Spin /></center>}>
               {content && content.length > 0 && (
                 content.map(content => {
