@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Row, Col, Spin, Modal, Icon } from 'antd';
+import { Row, Col, Spin, Modal } from 'antd';
 import axios from 'axios';
 import TimelineCard from '../components/timeline-card';
 import PostDetail from '../components/post-detail'
@@ -16,7 +16,7 @@ const Home = () => {
   const pageSize = 5
   useEffect(() => {
     getTimeline()
-  }, []);
+  });
 
   const getTimeline = () => {
     console.log(process.env.API_HEADER)
@@ -118,7 +118,7 @@ const Home = () => {
               loader={<center><Spin /></center>}>
               {content && content.length > 0 && (
                 content.map(content => {
-                  return <div onClick={(() => openModal(content.id))}><TimelineCard content={content.id} key={content.id} /></div>
+                  return <div onClick={(() => openModal(content.id))} key={content.id}><TimelineCard content={content.id}/></div>
                 })
               )}
             </InfiniteScroll>

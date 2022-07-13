@@ -1,12 +1,12 @@
 import { Row, Col, Spin } from 'antd';
-import { useState, useEffect } from 'react';
+import { UseState, UseEffect } from 'react';
 import axios from 'axios';
 
 
 const timelineCard = props => {
-    const [content, setContent] = useState()
-    const [imgLoaded, setImgLoaded] = useState()
-    useEffect(() => {
+    const [Content, SetContent] = UseState()
+    const [ImgLoaded, SetImgLoaded] = UseState()
+    UseEffect(() => {
         getContentDetail();
     }, []);
     const getContentDetail = () => {
@@ -17,7 +17,7 @@ const timelineCard = props => {
         }
         axios(config).then((res) => {
             if (res.status === 200) {
-                setContent(res.data)
+                SetContent(res.data)
             } else {
                 console.log(res.data)
             }
@@ -27,30 +27,30 @@ const timelineCard = props => {
     }
     return (
         <div className='post-card'>
-            {content && (
+            {Content && (
                 <Row className='card-content' type='flex'>
                     <Col xs={4} sm={3}>
-                        <img src={content.owner.picture} className='profile-pic' />
+                        <img src={Content.owner.picture} className='profile-pic' />
                     </Col>
                     <Col xs={20} sm={21}>
                         <Row>
-                            <b><p>{content.owner.firstName}</p></b>
+                            <b><p>{Content.owner.firstName}</p></b>
                         </Row>
                         <Row>
-                            <p>{content.text}</p>
+                            <p>{Content.text}</p>
                         </Row>
-                        {content.image && (
+                        {Content.image && (
                             <div>
-                                {imgLoaded ? null :
+                                {ImgLoaded ? null :
                                     (
                                         <Spin />
                                     )}
                                 <Row>
                                     <img
                                         className='content-img'
-                                        src={content.image}
-                                        onLoad={() => setImgLoaded(true)}
-                                        style={imgLoaded ? {} : { display: 'none' }} />
+                                        src={Content.image}
+                                        onLoad={() => SetImgLoaded(true)}
+                                        style={ImgLoaded ? {} : { display: 'none' }} />
                                 </Row>
                             </div>
                         )}

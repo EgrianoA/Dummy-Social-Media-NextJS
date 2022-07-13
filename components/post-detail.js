@@ -1,9 +1,9 @@
 import { Row, Col, Spin } from 'antd';
-import { useState, useEffect } from 'react';
+import { UseState, UseEffect } from 'react';
 
 const postDetail = props => {
-    const [imgLoaded, setImgLoaded] = useState()
-    useEffect(() => {
+    const [ImgLoaded, SetImgLoaded] = UseState()
+    UseEffect(() => {
     }, []);
 
     if (props.postDetail) {
@@ -29,7 +29,7 @@ const postDetail = props => {
                             </Row>
                             {content.image && (
                                 <div>
-                                    {imgLoaded ? null :
+                                    {ImgLoaded ? null :
                                         (
                                             <Spin />
                                         )}
@@ -37,8 +37,8 @@ const postDetail = props => {
                                         <img
                                             className='content-img'
                                             src={content.image}
-                                            onLoad={() => setImgLoaded(true)}
-                                            style={imgLoaded ? {} : { display: 'none' }} />
+                                            onLoad={() => SetImgLoaded(true)}
+                                            style={ImgLoaded ? {} : { display: 'none' }} />
                                     </Row>
                                 </div>
                             )}
@@ -48,8 +48,8 @@ const postDetail = props => {
                     <Row className='comment-section'>
                         <Col>
                             {comments.data && comments.data.length > 0 ?
-                                comments.data.map(comment => {
-                                    return (<div>
+                                comments.data.map((comment, index) => {
+                                    return (<div key={index}>
                                         <Row type='flex' className='comment-card'>
                                             <Col span={3}>
                                                 <img src={comment.owner.picture} className='profile-pic' />
