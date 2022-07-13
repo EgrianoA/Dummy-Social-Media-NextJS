@@ -28,7 +28,7 @@ body {
     min-height: 100vh;
 }
 
-.ant-modal{
+.ant-modal {
     min-width: 30vw;
     max-width: 720px;
 }
@@ -36,7 +36,6 @@ body {
 .ant-row-space-around {
     margin-top: 0px !important;
 }
-
 
 .timeline {
     background-color: white;
@@ -51,15 +50,15 @@ body {
 /*768p Screen Breakpoint*/
 @media only screen and (max-width: 1366px) {
     .timeline {
-        margin: 0 28vw 5vh 28vw;
+        margin: 0 25vw 5vh 25vw;
     }
 }
 
 /*IPAD PRO PORTRAIT Screen Breakpoint*/
 @media only screen and (max-width: 1024px) {
-    .timeline {
-        margin: 025vw 5vh 25vw;
-    }
+    // .timeline {
+    //     margin: 025vw 5vh 25vw;
+    // }
 }
 
 /*IPAD PORTRAIT Screen Breakpoint*/
@@ -68,4 +67,7 @@ body {
 
 /*Mobile Screen Breakpoint*/
 @media only screen and (max-width: 576px) {
+    .timeline {
+        margin: 0 5vw 5vh 5vw;
+    }
 }

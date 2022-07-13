@@ -1,5 +1,5 @@
 /*Default Style*/
-.post-card{
+.post-card {
     cursor: pointer;
     margin: 0 0 0 0;
     :hover {
@@ -10,19 +10,19 @@
         font-size: 15px;
         margin-bottom: 0px;
     }
-    .card-content{
+    .card-content {
         padding: 2vh 2vw 2vh 2vw;
         border-radius: 15px;
         min-height: 70px;
         margin-bottom: 0px;
     }
-    .profile-pic{
+    .profile-pic {
         border-radius: 50%;
         width: 3vw;
         max-width: 50px;
         max-height: auto;
     }
-    .content-img{
+    .content-img {
         border-radius: 10px;
         margin: 10px 0 10px 0;
         width: 20vw;
@@ -41,6 +41,14 @@
 
 /*768p Screen Breakpoint*/
 @media only screen and (max-width: 1366px) {
+    .post-card {
+        .profile-pic {
+            width: 4vw;
+        }
+        .content-img {
+            width: 40vw;
+        }
+    }
 }
 
 /*IPAD PRO PORTRAIT Screen Breakpoint*/
@@ -53,4 +61,12 @@
 
 /*Mobile Screen Breakpoint*/
 @media only screen and (max-width: 576px) {
+    .post-card {
+        .profile-pic {
+            width: 10vw;
+        }
+        .content-img {
+            width: 60vw;
+        }
+    }
 }

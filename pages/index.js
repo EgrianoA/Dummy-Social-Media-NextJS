@@ -19,6 +19,7 @@ const Home = () => {
   }, []);
 
   const getTimeline = () => {
+    console.log(process.env.API_HEADER)
     let config = {
       method: 'get',
       url: process.env.API_URL + `post?page=${page}&limit=${pageSize}`,

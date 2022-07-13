@@ -29,10 +29,10 @@ const timelineCard = props => {
         <div className='post-card'>
             {content && (
                 <Row className='card-content' type='flex'>
-                    <Col span={3}>
+                    <Col xs={4} sm={3}>
                         <img src={content.owner.picture} className='profile-pic' />
                     </Col>
-                    <Col span={21}>
+                    <Col xs={20} sm={21}>
                         <Row>
                             <b><p>{content.owner.firstName}</p></b>
                         </Row>

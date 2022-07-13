@@ -22,7 +22,7 @@
     .content-img {
         border-radius: 10px;
         margin: 10px 0 10px 0;
-        width: 20vw;
+        width: 300px;
         height: auto;
         object-fit: cover;
         max-width: 400px;
@@ -43,6 +43,11 @@
 }
 /*768p Screen Breakpoint*/
 @media only screen and (max-width: 1366px) {
+    .post-details{
+        .profile-pic{
+            width: 48px;
+        }
+    }
 }
 
 /*IPAD PRO PORTRAIT Screen Breakpoint*/
@@ -51,8 +56,14 @@
 
 /*IPAD PORTRAIT Screen Breakpoint*/
 @media only screen and (max-width: 768px) {
+    .post-details{
+        .profile-pic{
+            width: 45px;
+        }
+    }
 }
 
 /*Mobile Screen Breakpoint*/
 @media only screen and (max-width: 576px) {
+
 }
