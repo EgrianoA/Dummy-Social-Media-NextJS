@@ -1,12 +1,12 @@
 import { Row, Col, Spin } from 'antd';
-import { UseState, UseEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-const timelineCard = props => {
-    const [Content, SetContent] = UseState()
-    const [ImgLoaded, SetImgLoaded] = UseState()
-    UseEffect(() => {
+const TimelineCard = props => {
+    const [Content, SetContent] = useState()
+    const [ImgLoaded, SetImgLoaded] = useState()
+    useEffect(() => {
         getContentDetail();
     }, []);
     const getContentDetail = () => {
@@ -63,4 +63,4 @@ const timelineCard = props => {
 }
 
 
-export default timelineCard
+export default TimelineCard

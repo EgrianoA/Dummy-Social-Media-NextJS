@@ -1,9 +1,9 @@
 import { Row, Col, Spin } from 'antd';
-import { UseState, UseEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const postDetail = props => {
-    const [ImgLoaded, SetImgLoaded] = UseState()
-    UseEffect(() => {
+const PostDetail = props => {
+    const [ImgLoaded, SetImgLoaded] = useState()
+    useEffect(() => {
     }, []);
 
     if (props.postDetail) {
@@ -81,4 +81,4 @@ const postDetail = props => {
     }
 }
 
-export default postDetail
+export default PostDetail
